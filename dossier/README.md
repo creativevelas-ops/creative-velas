@@ -4,17 +4,25 @@ Dossier de eventos y bodas (alquiler y venta) en tres idiomas: español, catalá
 A4 apaisado, 10 páginas. Se genera desde código, así que cualquier cambio de texto o de
 precio se hace en un solo sitio y se vuelve a generar el PDF.
 
-## Generar los PDF
+## Generar el dossier
 
 ```bash
 node dossier/build.mjs        # los tres idiomas
 node dossier/build.mjs es     # solo uno (es | ca | en)
+node dossier/build.mjs --pdf  # además, PDF con las fotos descargadas en assets/photos/
 ```
 
-Salen en `dossier/out/Creative-Velas-Dossier-ES.pdf` (y `-CA`, `-EN`). El script avisa si algún
-texto se sale del margen de la página y si falta alguna foto.
+La salida principal son tres archivos HTML autocontenidos en `dossier/out/`
+(`Creative-Velas-Dossier-ES.html`, `-CA`, `-EN`):
 
-Requisitos: Node 22, el paquete `playwright` con Chromium, `pdftoppm` (solo para previsualizar).
+- Las fuentes van incrustadas en el propio archivo.
+- Las fotos se cargan desde la tienda Shopify al abrirlo en el navegador.
+- El botón «Guardar como PDF» de la barra superior imprime las 10 páginas A4 apaisadas
+  (en la ventana de impresión: tamaño A4 apaisado, márgenes «Ninguno», «Gráficos de fondo» activado).
+
+El script avisa si algún texto se sale del margen de la página y comprueba que al imprimir salen 10 páginas.
+
+Requisitos: Node 22 y el paquete `playwright` con Chromium.
 
 ## Qué tocar para cambiar algo
 
@@ -29,13 +37,18 @@ Requisitos: Node 22, el paquete `playwright` con Chromium, `pdftoppm` (solo para
 ## Fotos
 
 Las fotos salen de la tienda Shopify (creativevelas.com). La lista está en
-`photos.manifest.json`. Para descargarlas y optimizarlas:
+`photos.manifest.json` y el reparto por huecos en `photos.config.mjs`. Para cambiar una foto,
+se cambia el id del hueco en `photos.config.mjs`; los ids disponibles están en el manifiesto.
+
+Para generar un PDF directamente desde el código (sin pasar por el navegador) hay que
+descargar antes las fotos:
 
 ```bash
 dossier/fetch-photos.sh
+node dossier/build.mjs --pdf
 ```
 
-Necesita acceso de red a `cdn.shopify.com`, además de `curl`, `jq` e ImageMagick.
+Eso necesita acceso de red a `cdn.shopify.com`, además de `curl`, `jq` e ImageMagick.
 Si una foto no está, el hueco se pinta con un tono neutro.
 
 ## Condiciones fijadas

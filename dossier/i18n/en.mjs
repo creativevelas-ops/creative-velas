@@ -26,7 +26,7 @@ export default (p, f) => ({
       'Florists and decoration studios',
       'Corporate events and celebrations',
     ],
-    caption: 'Sun Lantern · the three sizes, with the soy candle that goes inside',
+    caption: 'Sun Lantern · handmade in our workshop in Tarragona',
   },
   ways: {
     label: 'How we work with the trade',
@@ -54,7 +54,7 @@ export default (p, f) => ({
         'Large orders: tailored quote',
       ],
     },
-    captions: ['Ceremony', 'Banquet and centrepieces', 'Favours and gifts'],
+    captions: ['Sun Lantern', 'Translucent candles', 'Candle packs'],
   },
   packs: {
     label: 'Rental · Base packs',
@@ -90,7 +90,7 @@ export default (p, f) => ({
       ['Availability', `We recommend booking ${p.weeksAhead} weeks in advance, especially in spring and autumn.`],
       ['If something breaks during the event', 'The deposit covers any incidents: the replacement cost is assessed and deducted. If there are no incidents, it is returned in full after the event.'],
     ],
-    captions: ['Ceremony set-up', 'Pieces for centrepieces'],
+    captions: ['Sun Lantern', 'Sun Translucent candle'],
   },
   collection: {
     label: 'Collection',
@@ -125,7 +125,7 @@ export default (p, f) => ({
     bigNumber: String(p.minOrder),
     bigUnit: 'units',
     bigText: `Minimum trade order: ${p.minOrder} units. For special combinations or high volumes we prepare a tailored quote in less than ${p.quoteHours} hours.`,
-    caption: 'Colours and finishes',
+    caption: 'Sun Lantern · 11 colours to choose from',
   },
   tariff: {
     label: 'Trade pricing',
@@ -170,5 +170,9 @@ export default (p, f) => ({
       ['Web and Instagram', `${p.contact.web} · ${p.contact.ig}`],
     ],
     closing: 'Request your tailored proposal.',
+  },
+  print: {
+    button: 'Save as PDF',
+    steps: 'To get the PDF: press the button and, in the print window, choose “Save as PDF”, A4 landscape, margins “None”, and turn on “Background graphics”. Works best in Chrome or Edge.',
   },
 });

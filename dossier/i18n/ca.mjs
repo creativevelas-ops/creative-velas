@@ -26,7 +26,7 @@ export default (p, f) => ({
       'Floristeries i empreses de decoració',
       "Esdeveniments d'empresa i celebracions",
     ],
-    caption: "Fanal Sun Lantern · les tres mides, amb l'espelma de soja que va al seu interior",
+    caption: 'Fanal Sun Lantern · fet a mà al nostre taller de Tarragona',
   },
   ways: {
     label: 'Com treballem amb professionals',
@@ -54,7 +54,7 @@ export default (p, f) => ({
         'Comandes grans: pressupost a mida',
       ],
     },
-    captions: ['Cerimònia', 'Banquet i centres de taula', 'Detall i regal'],
+    captions: ['Fanal Sun Lantern', 'Espelmes Translucent', "Packs d'espelmes"],
   },
   packs: {
     label: 'Lloguer · Packs base',
@@ -90,7 +90,7 @@ export default (p, f) => ({
       ['Disponibilitat', `Recomanem reservar amb ${p.weeksAhead} setmanes d'antelació, especialment a la primavera i a la tardor.`],
       ["Si alguna cosa es trenca durant l'esdeveniment", "La fiança cobreix possibles incidències: es valora el cost de reposició i es descompta. Si no hi ha incidències, es retorna íntegra després de l'esdeveniment."],
     ],
-    captions: ['Muntatge de cerimònia', 'Peces per a centres de taula'],
+    captions: ['Fanal Sun Lantern', 'Espelma Sun Translucent'],
   },
   collection: {
     label: 'Col·lecció',
@@ -125,7 +125,7 @@ export default (p, f) => ({
     bigNumber: String(p.minOrder),
     bigUnit: 'unitats',
     bigText: `Comanda mínima professional: ${p.minOrder} unitats. Per a combinacions especials o quantitats altes preparem un pressupost a mida en menys de ${p.quoteHours} hores.`,
-    caption: 'Colors i acabats',
+    caption: 'Fanal Sun Lantern · 11 colors a triar',
   },
   tariff: {
     label: 'Tarifa professional',
@@ -170,5 +170,9 @@ export default (p, f) => ({
       ['Web i Instagram', `${p.contact.web} · ${p.contact.ig}`],
     ],
     closing: 'Demana la teva proposta personalitzada.',
+  },
+  print: {
+    button: 'Desa com a PDF',
+    steps: "Per obtenir el PDF: prem el botó i, a la finestra d'impressió, tria «Desa com a PDF», mida A4 apaïsat, marges «Cap» i activa «Gràfics de fons». Funciona millor a Chrome o Edge.",
   },
 });

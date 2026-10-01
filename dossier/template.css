@@ -205,3 +205,19 @@ ul.dots li::before { content: ''; position: absolute; left: 0; top: 2.2mm; width
 .contact-page .closing { margin-top: 12mm; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16pt; color: #e0b98f; }
 .contact-page .photo { position: absolute; top: 0; right: 0; bottom: 0; width: 38%; }
 .contact-page .foot { right: auto; width: 56%; }
+
+/* Franjas de varias fotos */
+.tiles { display: grid; gap: 5mm; height: 100%; }
+.tiles.n3 { grid-template-columns: repeat(3, 1fr); }
+.tiles.n4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Vista en pantalla (el PDF usa la vista de impresión) */
+@media screen {
+  body { background: #cfc9bf; padding-bottom: 12mm; }
+  .page { margin: 10mm auto 0; box-shadow: 0 2mm 8mm rgba(0, 0, 0, .25); }
+  .bar { position: sticky; top: 0; z-index: 10; display: flex; gap: 6mm; align-items: center; justify-content: center; padding: 3.5mm 8mm; background: var(--ink); color: var(--ivory); font-size: 9.6pt; box-shadow: 0 1mm 4mm rgba(0, 0, 0, .3); }
+  .bar span { max-width: 190mm; line-height: 1.4; }
+  .bar button { font: 500 9.6pt 'Jost', sans-serif; letter-spacing: .08em; background: var(--accent); color: #fff; border: 0; padding: 2.6mm 6mm; cursor: pointer; white-space: nowrap; }
+  .bar button:hover { background: var(--accent-deep); }
+}
+@media print { .noprint { display: none !important; } }

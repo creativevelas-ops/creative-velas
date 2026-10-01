@@ -26,7 +26,7 @@ export default (p, f) => ({
       'Floristerías y empresas de decoración',
       'Eventos de empresa y celebraciones',
     ],
-    caption: 'Fanal Sun Lantern · los tres tamaños, con la vela de soja que va en su interior',
+    caption: 'Fanal Sun Lantern · hecho a mano en nuestro taller de Tarragona',
   },
   ways: {
     label: 'Cómo trabajamos con profesionales',
@@ -54,7 +54,7 @@ export default (p, f) => ({
         'Pedidos grandes: presupuesto a medida',
       ],
     },
-    captions: ['Ceremonia', 'Banquete y centros de mesa', 'Detalle y regalo'],
+    captions: ['Fanal Sun Lantern', 'Velas Translucent', 'Packs de velas'],
   },
   packs: {
     label: 'Alquiler · Packs base',
@@ -90,7 +90,7 @@ export default (p, f) => ({
       ['Disponibilidad', `Recomendamos reservar con ${p.weeksAhead} semanas de antelación, especialmente en primavera y otoño.`],
       ['Si algo se rompe durante el evento', 'La fianza cubre posibles incidencias: se valora el coste de reposición y se descuenta. Si no hay incidencias, se devuelve íntegra tras el evento.'],
     ],
-    captions: ['Montaje de ceremonia', 'Piezas para centros de mesa'],
+    captions: ['Fanal Sun Lantern', 'Vela Sun Translucent'],
   },
   collection: {
     label: 'Colección',
@@ -125,7 +125,7 @@ export default (p, f) => ({
     bigNumber: String(p.minOrder),
     bigUnit: 'unidades',
     bigText: `Pedido mínimo profesional: ${p.minOrder} unidades. Para combinaciones especiales o cantidades altas preparamos un presupuesto a medida en menos de ${p.quoteHours} horas.`,
-    caption: 'Colores y acabados',
+    caption: 'Fanal Sun Lantern · 11 colores a elegir',
   },
   tariff: {
     label: 'Tarifa profesional',
@@ -170,5 +170,9 @@ export default (p, f) => ({
       ['Web e Instagram', `${p.contact.web} · ${p.contact.ig}`],
     ],
     closing: 'Solicita tu propuesta personalizada.',
+  },
+  print: {
+    button: 'Guardar como PDF',
+    steps: 'Para obtener el PDF: pulsa el botón y, en la ventana de impresión, elige «Guardar como PDF», tamaño A4 apaisado, márgenes «Ninguno» y activa «Gráficos de fondo». Funciona mejor en Chrome o Edge.',
   },
 });

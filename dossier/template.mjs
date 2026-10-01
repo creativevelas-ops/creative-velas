@@ -1,14 +1,16 @@
 // Plantilla HTML del dossier. Recibe el contenido ya traducido (i18n/*.mjs),
 // las cifras (data.mjs) y el reparto de fotos (photos.config.mjs).
 
-export function render({ c, p, f, lang, slots, photoUrl, css }) {
+export function render({ c, p, f, lang, slots, photoUrl, css, standalone = false }) {
   const pct = (n) => (lang === 'en' ? `−${n}%` : `−${n} %`);
+  const FALLBACK = 'linear-gradient(135deg,#eadfce,#dccbb4)';
+  const phUrl = (url, pos, extra = '') =>
+    `<div class="ph ${extra}" style="background-image:${url ? `url('${url.replace(/&/g, '&amp;')}'),` : ''}${FALLBACK};${pos ? `background-position:${pos};` : ''}"></div>`;
   const ph = (slot, extra = '') => {
     const s = slots[slot];
-    const url = s && photoUrl(s.id);
-    const style = url ? ` style="background-image:url('${url}');${s.pos ? `background-position:${s.pos};` : ''}"` : '';
-    return `<div class="ph ${url ? '' : 'ph-empty'} ${extra}"${style}></div>`;
+    return phUrl(s && photoUrl(s.id), s && s.pos, extra);
   };
+  const tiles = (slot) => `<div class="tiles n${slots[slot].ids.length}">${slots[slot].ids.map((id) => phUrl(photoUrl(id))).join('')}</div>`;
   const foot = (n) => `<div class="foot"><span>${c.footer}</span><span>${String(n).padStart(2, '0')}</span></div>`;
   const li = (arr) => arr.map((t) => `<li>${t}</li>`).join('');
   const lb = (arr) => arr.map(([b, t]) => `<li><b>${b}</b> ${t}</li>`).join('');
@@ -59,9 +61,9 @@ export function render({ c, p, f, lang, slots, photoUrl, css }) {
   </div>
   <div class="two">${way(c.ways.a, 'a')}${way(c.ways.b, 'b')}</div>
   <div class="trio">
-    <figure>${ph('waysCeremony')}<figcaption>${c.ways.captions[0]}</figcaption></figure>
-    <figure>${ph('waysBanquet')}<figcaption>${c.ways.captions[1]}</figcaption></figure>
-    <figure>${ph('waysGift')}<figcaption>${c.ways.captions[2]}</figcaption></figure>
+    <figure>${ph('waysA')}<figcaption>${c.ways.captions[0]}</figcaption></figure>
+    <figure>${ph('waysB')}<figcaption>${c.ways.captions[1]}</figcaption></figure>
+    <figure>${ph('waysC')}<figcaption>${c.ways.captions[2]}</figcaption></figure>
   </div>
   ${foot(3)}
 </section>`);
@@ -174,7 +176,7 @@ export function render({ c, p, f, lang, slots, photoUrl, css }) {
       ${c.tariff.notes.map(([h, t]) => `<div class="card"><div class="tag">${h}</div><p>${t}</p></div>`).join('')}
     </div>
   </div>
-  <div class="band">${ph('tariffBand', 'bandph')}</div>
+  <div class="band">${tiles('tariffBand')}</div>
   ${foot(8)}
 </section>`);
 
@@ -186,7 +188,7 @@ export function render({ c, p, f, lang, slots, photoUrl, css }) {
   <div class="steps">${c.process.steps
     .map(([h, t], i) => `<div class="step"><span class="n">${String(i + 1).padStart(2, '0')}</span><h3>${h}</h3><p>${t}</p></div>`)
     .join('')}</div>
-  <div class="band">${ph('processBand', 'bandph')}</div>
+  <div class="band">${tiles('processBand')}</div>
   ${foot(9)}
 </section>`);
 
@@ -206,5 +208,5 @@ export function render({ c, p, f, lang, slots, photoUrl, css }) {
 
   return `<!doctype html>
 <html lang="${lang}"><head><meta charset="utf-8"><title>${c.docTitle}</title>
-<style>${css}</style></head><body>${pages.join('\n')}</body></html>`;
+<style>${css}</style></head><body>${standalone ? `<div class="noprint bar"><span>${c.print.steps}</span><button onclick="window.print()">${c.print.button}</button></div>` : ''}${pages.join('\n')}</body></html>`;
 }
