@@ -7,6 +7,9 @@ export const p = {
   minRental: 182,
   extras: { lantern: 20.7, sun: 6.6 },
 
+  // Pack Boda Completa (grandes cantidades): hasta 150 invitados = 15 mesas de 10
+  wedding: { from: 690, guests: 150, tables: 15, perTable: 46, extraTable: 24, xl: 10, sun: 42, candles: 60 },
+
   // Alquiler: condiciones
   km: 30,
   perKm: 0.7,

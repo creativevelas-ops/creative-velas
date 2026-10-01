@@ -73,7 +73,6 @@ export function render({ c, p, f, lang, slots, photoUrl, css, standalone = false
     .map(
       (it, i) => `
     <div class="card pack ${p.packFrom[i] === p.minRental ? 'min' : ''}">
-      ${ph('pack' + (i + 1))}
       <div class="body"><h3>${it.name}</h3><ul class="dots">${li(it.bullets)}</ul></div>
       <div class="price"><small>${c.packs.from}</small><b>${f(p.packFrom[i])}</b></div>
     </div>`
@@ -87,6 +86,15 @@ export function render({ c, p, f, lang, slots, photoUrl, css, standalone = false
     <p class="lead">${c.packs.intro}</p>
   </div>
   <div class="three">${packCards}</div>
+  <div class="wedding">
+    <div class="w-main">
+      <div class="tag">${c.packs.wedding.tag}</div>
+      <h3>${c.packs.wedding.name}</h3>
+      <p class="w-lead">${c.packs.wedding.lead}</p>
+      <ul class="dots">${li(c.packs.wedding.bullets)}</ul>
+    </div>
+    <div class="w-price"><small>${c.packs.wedding.from}</small><b>${f(p.wedding.from)}</b><span>${c.packs.wedding.per}</span><em>${c.packs.wedding.extra}</em></div>
+  </div>
   <div class="addons">
     <div class="tag">${c.packs.addonsLabel}</div>
     ${c.packs.addons.map(([b, s]) => `<div><b>${b}</b><span>${s}</span></div>`).join('')}

@@ -32,7 +32,7 @@ const packs = [
 const qa = [
   ['¿Cuál es el mínimo para alquilar?', `${f(p.minRental)} sin IVA, el precio del Pack 2. Los packs se amplían pieza a pieza.`],
   ['¿Hay descuentos?', `En la compra profesional, del ${p.tiers[0].off} % al ${p.tiers[3].off} % según unidades (desde ${p.minOrder}). En el alquiler no hay tarifa de descuento: los pedidos grandes se valoran en el presupuesto.`],
-  ['¿Qué incluye el alquiler?', 'Entrega, montaje, desmontaje, recogida y cera de soja natural. El cliente no almacena nada.'],
+  ['¿Hay algo para bodas grandes?', `Sí: el Pack Boda Completa, ${f(p.wedding.from)} sin IVA para hasta ${p.wedding.guests} invitados (${p.wedding.tables} mesas), unos ${f(p.wedding.perTable)} por mesa. Cada mesa adicional, ${f(p.wedding.extraTable)}.`],
   ['¿Cuánto se paga al reservar?', `Una señal del ${p.signalPct} % del alquiler y la fianza (${p.depositPct} %, mínimo ${f(p.depositMin)}). El resto, ${p.balanceDays} días antes del evento.`],
   ['¿Y si se rompe algo?', 'Se descuenta de la fianza el coste de reposición. Si no hay incidencias, se devuelve íntegra tras revisar el material.'],
   ['¿Se puede personalizar?', 'Sí: frase en el fanal (hasta 40 caracteres) y color a elegir entre 11 tonos en fanales y 8 en velas translúcidas.'],
@@ -65,7 +65,8 @@ const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><title>
     <div class="sub">Llevamos, montamos, recogemos y nos encargamos de la cera. Precios desde, sin IVA.</div>
     <div class="packs">${packs
       .map(([n, t], i) => `<div class="pack ${p.packFrom[i] === p.minRental ? 'min' : ''}"><div><h3>${n}</h3><p>${t}</p></div><div class="price"><small>Desde</small><b>${f(p.packFrom[i])}</b></div></div>`)
-      .join('')}</div>
+      .join('')}
+      <div class="pack wed"><div><h3>Pack Boda Completa · grandes cantidades</h3><p>Hasta ${p.wedding.guests} invitados (${p.wedding.tables} mesas): ${p.wedding.xl} fanales XL · ${p.wedding.sun} Sun Lantern · ${p.wedding.candles} velas pequeñas de soja · set de la Ceremonia de la Luz de regalo · ≈ ${f(p.wedding.perTable)} por mesa.</p></div><div class="price"><small>Desde</small><b>${f(p.wedding.from)}</b></div></div></div>
     <p class="note"><b>Ampliaciones:</b> fanal extra ${f(p.extras.lantern, true)}/ud · Sun Lantern extra ${f(p.extras.sun, true)}/ud · velas pequeñas de soja, a consultar según número de mesas.</p>
   </div>
 

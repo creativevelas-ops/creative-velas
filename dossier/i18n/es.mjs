@@ -72,6 +72,21 @@ export default (p, f) => ({
       ['Sun Lantern extra', `${f(p.extras.sun, true)} / unidad`],
       ['Velas pequeñas de soja', 'A consultar, según número de mesas'],
     ],
+    wedding: {
+      tag: 'Grandes cantidades · Bodas',
+      name: 'Pack Boda Completa',
+      lead: `Para bodas de hasta ${p.wedding.guests} invitados (${p.wedding.tables} mesas)`,
+      bullets: [
+        `${p.wedding.xl} fanales XL artesanales: 6 en la ceremonia y 4 en la bienvenida`,
+        `${p.wedding.sun} Sun Lantern: 12 en la ceremonia y 2 por mesa`,
+        `${p.wedding.candles} velas pequeñas de soja: 4 por mesa`,
+        'Set de la Ceremonia de la Luz de regalo',
+        'Entrega, montaje por nuestro equipo, desmontaje, recogida y cera incluidos',
+      ],
+      from: 'Desde',
+      per: `≈ ${f(p.wedding.perTable)} por mesa`,
+      extra: `Mesa adicional: ${f(p.wedding.extraTable)}`,
+    },
     vat: 'Los precios de alquiler y la tarifa profesional son sin IVA; los de la colección son PVP recomendado con IVA. El alquiler incluye entrega, montaje, desmontaje, recogida y cera de soja natural.',
   },
   terms: {

@@ -72,6 +72,21 @@ export default (p, f) => ({
       ['Sun Lantern extra', `${f(p.extras.sun, true)} / unitat`],
       ['Espelmes petites de soja', 'A consultar, segons el nombre de taules'],
     ],
+    wedding: {
+      tag: 'Grans quantitats · Bodes',
+      name: 'Pack Boda Completa',
+      lead: `Per a bodes de fins a ${p.wedding.guests} convidats (${p.wedding.tables} taules)`,
+      bullets: [
+        `${p.wedding.xl} fanals XL artesanals: 6 a la cerimònia i 4 a la benvinguda`,
+        `${p.wedding.sun} Sun Lantern: 12 a la cerimònia i 2 per taula`,
+        `${p.wedding.candles} espelmes petites de soja: 4 per taula`,
+        'Set de la Cerimònia de la Llum de regal',
+        'Lliurament, muntatge pel nostre equip, desmuntatge, recollida i cera inclosos',
+      ],
+      from: 'Des de',
+      per: `≈ ${f(p.wedding.perTable)} per taula`,
+      extra: `Taula addicional: ${f(p.wedding.extraTable)}`,
+    },
     vat: "Els preus de lloguer i la tarifa professional són sense IVA; els de la col·lecció són PVP recomanat amb IVA. El lloguer inclou lliurament, muntatge, desmuntatge, recollida i cera de soja natural.",
   },
   terms: {

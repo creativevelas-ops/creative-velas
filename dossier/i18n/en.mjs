@@ -72,6 +72,21 @@ export default (p, f) => ({
       ['Extra Sun Lantern', `${f(p.extras.sun, true)} / unit`],
       ['Small soy candles', 'On request, based on the number of tables'],
     ],
+    wedding: {
+      tag: 'Large orders · Weddings',
+      name: 'Complete Wedding pack',
+      lead: `For weddings of up to ${p.wedding.guests} guests (${p.wedding.tables} tables)`,
+      bullets: [
+        `${p.wedding.xl} handcrafted XL lanterns: 6 for the ceremony and 4 for the welcome`,
+        `${p.wedding.sun} Sun Lantern: 12 for the ceremony and 2 per table`,
+        `${p.wedding.candles} small soy candles: 4 per table`,
+        'Ceremony of Light set as a gift',
+        'Delivery, set-up by our team, take-down, collection and wax included',
+      ],
+      from: 'From',
+      per: `≈ ${f(p.wedding.perTable)} per table`,
+      extra: `Extra table: ${f(p.wedding.extraTable)}`,
+    },
     vat: 'Rental and trade prices are excluding VAT; collection prices are recommended retail, VAT included. The rental includes delivery, set-up, take-down, collection and natural soy wax.',
   },
   terms: {
