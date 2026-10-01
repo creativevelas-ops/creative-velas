@@ -24,6 +24,15 @@ El script avisa si algún texto se sale del margen de la página y comprueba que
 
 Requisitos: Node 22 y el paquete `playwright` con Chromium.
 
+## Resumen de 2 páginas para reenviar
+
+```bash
+node dossier/summary.mjs
+```
+
+Genera `dossier/out/Creative-Velas-Resumen-Alquiler-y-Venta.pdf` (A4 vertical). Lee las cifras de
+`data.mjs`, así que siempre coincide con el dossier. El diseño está en `summary.css`.
+
 ## Qué tocar para cambiar algo
 
 | Quiero cambiar… | Archivo |
