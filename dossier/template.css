@@ -1,0 +1,207 @@
+:root {
+  --ivory: #f4eee4;
+  --paper: #faf6ef;
+  --ink: #2a211b;
+  --muted: #75675a;
+  --accent: #a5673a;
+  --accent-deep: #8a5329;
+  --accent-soft: #e8d6c2;
+  --line: #d8c9b6;
+}
+@page { size: 297mm 210mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 10.2pt;
+  line-height: 1.55;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-feature-settings: 'lnum' 1;
+}
+.ph { min-height: 0; }
+.band .ph, .photo .ph { height: 100%; }
+.page {
+  width: 297mm; height: 210mm; position: relative; overflow: hidden;
+  background: var(--ivory); break-after: page; page-break-after: always;
+  padding: 15mm 16mm 17mm;
+}
+.page:last-child { break-after: auto; page-break-after: auto; }
+.foot {
+  position: absolute; left: 16mm; right: 16mm; bottom: 7mm;
+  display: flex; justify-content: space-between;
+  font-weight: 500; font-size: 6.2pt; letter-spacing: .3em; color: var(--muted);
+}
+.dark .foot { color: rgba(244, 238, 228, .55); }
+
+.label {
+  font-weight: 500; font-size: 6.8pt; letter-spacing: .34em; text-transform: uppercase;
+  color: var(--accent); display: flex; align-items: center; gap: 3mm;
+}
+.label::before { content: ''; width: 9mm; height: .25mm; background: var(--accent); }
+h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
+h2 { font-weight: 500; font-size: 31pt; line-height: 1.04; margin-top: 3.5mm; }
+h2 em, h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+p + p { margin-top: 2.6mm; }
+.lead { font-size: 10.8pt; color: rgba(42, 33, 27, .88); }
+strong, b { font-weight: 500; }
+
+/* Fotos */
+.ph { background-color: #e5d8c8; background-size: cover; background-position: center; }
+.ph-empty { background-image: linear-gradient(135deg, #eadfce 0%, #dccbb4 100%); }
+figure { margin: 0; }
+figcaption {
+  margin-top: 2mm; font-weight: 500; font-size: 6.2pt; letter-spacing: .24em;
+  text-transform: uppercase; color: var(--muted);
+}
+.card { background: var(--paper); border: .25mm solid var(--line); padding: 5.5mm 6.5mm; }
+.card h3 { font-weight: 500; font-size: 15.5pt; line-height: 1.12; margin-bottom: 2mm; }
+.tag { font-weight: 500; font-size: 6.4pt; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.6mm; }
+ul.dots { list-style: none; }
+ul.dots li { position: relative; padding-left: 4.4mm; margin-top: 1.2mm; }
+ul.dots li::before { content: ''; position: absolute; left: 0; top: 2.2mm; width: 1.4mm; height: 1.4mm; border-radius: 50%; background: var(--accent); }
+
+/* Portada */
+.cover { padding: 0; display: grid; grid-template-columns: 58% 42%; background: var(--ivory); }
+.cover .left { padding: 20mm 16mm 16mm 22mm; display: flex; flex-direction: column; }
+.wordmark { font-weight: 500; font-size: 8pt; letter-spacing: .6em; text-transform: uppercase; }
+.cover h1 { font-weight: 500; font-size: 47pt; line-height: 1; margin-top: 34mm; letter-spacing: -.01em; }
+.cover .kicker { margin-top: 9mm; font-weight: 500; font-size: 7.4pt; letter-spacing: .34em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 3mm; }
+.cover .kicker::before { content: ''; width: 12mm; height: .25mm; background: var(--accent); }
+.cover .quote { margin-top: 8mm; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15pt; line-height: 1.32; max-width: 118mm; color: rgba(42, 33, 27, .9); }
+.cover .contact { margin-top: auto; font-weight: 500; font-size: 6.8pt; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+.cover .right { position: relative; }
+.cover .right .ph { position: absolute; inset: 0; }
+
+/* La marca */
+.brand { display: grid; grid-template-columns: 1fr 100mm; gap: 14mm; height: 100%; }
+.brand .values { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 8mm; margin-top: 10mm; padding-top: 8mm; border-top: .25mm solid var(--line); }
+.brand .values div b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 14.5pt; line-height: 1.15; }
+.brand .values div span { font-size: 9.6pt; color: var(--muted); }
+.brand .work { margin-top: 10mm; padding-top: 8mm; border-top: .25mm solid var(--line); }
+.brand .work .tag { margin-bottom: 1mm; }
+.brand .work ul { columns: 2; column-gap: 8mm; }
+.brand .work li { break-inside: avoid; }
+.brand .pic { display: flex; flex-direction: column; height: 100%; }
+.brand .pic .ph { flex: 1; min-height: 0; }
+
+/* Dos formas */
+.ways .head .lead { max-width: 175mm; margin-top: 3.5mm; }
+.ways .two { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; margin-top: 8mm; }
+.ways .two .card { padding: 7mm 8mm; }
+.ways .two .card h3 { font-size: 18pt; margin-bottom: 2.4mm; }
+.ways .two .card.a { border-color: var(--accent); }
+.ways .two .card p { margin-top: 0; }
+.ways .two ul { margin-top: 2.4mm; }
+.ways .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 8mm; }
+.ways .trio .ph { height: 47mm; }
+
+/* Packs */
+.packs .head .lead { max-width: 200mm; margin-top: 3mm; }
+.packs .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; margin-top: 6mm; }
+.packs .pack { padding: 0; display: flex; flex-direction: column; }
+.packs .pack .ph { height: 34mm; }
+.packs .pack .body { padding: 4.5mm 6mm 0; flex: 1; }
+.packs .pack h3 { font-size: 15pt; }
+.packs .pack ul.dots li { margin-top: 1mm; font-size: 9.8pt; }
+.packs .pack .price { display: flex; align-items: baseline; gap: 2.6mm; padding: 3mm 6mm 4.2mm; border-top: .25mm solid var(--line); margin-top: 3mm; }
+.packs .pack .price small { font-weight: 500; font-size: 6.4pt; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+.packs .pack .price b { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 27pt; line-height: 1; color: var(--accent-deep); }
+.packs .pack.min { border-color: var(--accent); }
+.packs .addons { display: grid; grid-template-columns: auto 1fr 1fr 1.25fr; gap: 6mm; align-items: center; margin-top: 5mm; padding: 3.2mm 6mm; background: var(--accent-soft); }
+.packs .addons .tag { margin: 0; }
+.packs .addons div b { display: block; font-weight: 500; font-size: 8.6pt; }
+.packs .addons div span { font-size: 8.8pt; color: var(--accent-deep); font-weight: 500; }
+.packs .vat { margin-top: 4mm; font-size: 8.4pt; color: var(--muted); max-width: 230mm; }
+
+/* Condiciones */
+.terms .top { display: grid; grid-template-columns: 1fr 112mm; gap: 10mm; }
+.terms h2 { font-size: 28pt; }
+.terms ul.items { list-style: none; margin-top: 7mm; }
+.terms ul.items li { padding: 3mm 0 3mm 6mm; font-size: 10.4pt; border-top: .25mm solid var(--line); position: relative; }
+.terms ul.items li:last-child { border-bottom: .25mm solid var(--line); }
+.terms ul.items li::before { content: ''; position: absolute; left: 0; top: 5.6mm; width: 2mm; height: .3mm; background: var(--accent); }
+.terms ul.items li b { font-weight: 500; }
+.terms .pics { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.terms .pics .ph { height: 96mm; }
+.terms .cards { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 6mm; margin-top: 8mm; }
+.terms .cards .card { padding: 6mm 7mm; }
+.terms .cards .card p { font-size: 9.6pt; margin-top: 0; }
+.terms .cards .card:first-child { border-color: var(--accent); }
+
+/* Colección */
+.coll .items { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5mm; margin-top: 6mm; }
+.coll .item { padding: 0; }
+.coll .item .ph { height: 58mm; }
+.coll .item .body { padding: 4.5mm 5.5mm 5mm; }
+.coll .item h3 { font-size: 16.5pt; margin-bottom: .6mm; }
+.coll .item .sub { font-weight: 500; font-size: 9pt; color: var(--accent-deep); }
+.coll .item .detail { margin-top: 2mm; font-size: 9.2pt; color: var(--muted); min-height: 15mm; }
+.coll .item .price { margin-top: 2mm; padding-top: 2mm; border-top: .25mm solid var(--line); font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 19pt; color: var(--accent-deep); line-height: 1.1; }
+.coll .item .price small { display: block; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 6pt; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-top: .8mm; }
+.coll .closed { margin-top: 6mm; padding: 4mm 6mm; background: var(--accent-soft); display: grid; grid-template-columns: auto repeat(4, 1fr); gap: 6mm; align-items: center; }
+.coll .closed .tag { margin: 0; max-width: 28mm; line-height: 1.5; }
+.coll .closed div b { display: block; font-weight: 500; font-size: 9pt; line-height: 1.3; }
+.coll .closed div span { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 15pt; color: var(--accent-deep); }
+.coll .note { margin-top: 3mm; font-size: 8pt; color: var(--muted); }
+
+/* Personalización */
+.custom .grid { display: grid; grid-template-columns: 1fr 108mm; gap: 14mm; height: 100%; }
+.custom .do { margin-top: 7mm; }
+.custom .do ul { list-style: none; margin-top: 2mm; }
+.custom .do li { padding: 2.4mm 0; border-top: .25mm solid var(--line); }
+.custom .do li:last-child { border-bottom: .25mm solid var(--line); }
+.custom .do li b { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 13pt; margin-right: 1.5mm; }
+.custom .ceremony { margin-top: 6mm; }
+.custom .ceremony p { margin-top: 0; }
+.custom .right { display: flex; flex-direction: column; height: 100%; }
+.custom .right .ph { flex: 1; height: auto; }
+.custom .big { background: var(--ink); color: var(--ivory); padding: 6mm 7mm; display: grid; grid-template-columns: auto 1fr; gap: 6mm; align-items: center; margin-top: 6mm; }
+.custom .big .num { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 50pt; line-height: .9; color: #e0b98f; text-align: center; }
+.custom .big .num small { display: block; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 6.4pt; letter-spacing: .3em; text-transform: uppercase; color: rgba(244, 238, 228, .7); margin-top: 2mm; }
+.custom .big h3 { font-weight: 500; font-size: 15pt; margin-bottom: 1.4mm; }
+.custom .big p { margin: 0; font-size: 8.8pt; color: rgba(244, 238, 228, .88); }
+
+/* Tarifa */
+.tariff .grid { display: grid; grid-template-columns: 1fr 78mm; gap: 12mm; }
+.tariff .sub { margin-top: 3mm; color: var(--muted); }
+.tariff table { width: 100%; border-collapse: collapse; margin-top: 6mm; }
+.tariff th { text-align: right; font-weight: 400; padding: 0 3mm 2.4mm; border-bottom: .4mm solid var(--ink); vertical-align: bottom; }
+.tariff th:first-child { text-align: left; padding-left: 0; font-weight: 500; font-size: 6.6pt; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); }
+.tariff th .t { display: block; font-weight: 500; font-size: 8.6pt; }
+.tariff th .d { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 13pt; color: var(--accent-deep); line-height: 1.1; }
+.tariff td { text-align: right; padding: 3.1mm 3mm; border-bottom: .25mm solid var(--line); font-variant-numeric: tabular-nums; font-size: 10pt; }
+.tariff td:first-child { text-align: left; padding-left: 0; font-weight: 500; }
+.tariff tbody tr:nth-child(odd) td { background: rgba(250, 246, 239, .7); }
+.tariff .notes .card { margin-bottom: 5mm; padding: 5mm 6mm; }
+.tariff .notes .card p { margin: 0; font-size: 9pt; }
+.tariff .notes .card .tag { margin-bottom: 1mm; }
+.tariff .band { margin-top: 8mm; height: 36mm; }
+
+/* Proceso */
+.process .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5mm; margin-top: 9mm; position: relative; }
+.process .steps::before { content: ''; position: absolute; left: 0; right: 0; top: 12.5mm; height: .25mm; background: var(--line); }
+.process .step { position: relative; padding-top: 0; }
+.process .step .n { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 34pt; line-height: 1; color: var(--accent); background: var(--ivory); display: inline-block; padding-right: 3mm; position: relative; }
+.process .step h3 { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 11.4pt; margin-top: 5mm; line-height: 1.25; }
+.process .step p { margin-top: 1.8mm; font-size: 9.8pt; color: rgba(42, 33, 27, .86); }
+.process .band { margin-top: 14mm; height: 70mm; }
+
+/* Contacto */
+.dark { background: var(--ink); color: var(--ivory); }
+.contact-page { padding: 0; }
+.contact-page .left { padding: 20mm 16mm 18mm 22mm; width: 62%; }
+.contact-page h2 { font-size: 36pt; margin-top: 5mm; }
+.contact-page h2 em { color: #e0b98f; }
+.contact-page .label { color: #e0b98f; }
+.contact-page .label::before { background: #e0b98f; }
+.contact-page .lead { color: rgba(244, 238, 228, .88); max-width: 125mm; margin-top: 6mm; }
+.contact-page .info { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 8mm; margin-top: 12mm; max-width: 150mm; }
+.contact-page .info div { border-top: .25mm solid rgba(244, 238, 228, .3); padding-top: 2.4mm; }
+.contact-page .info small { display: block; font-weight: 500; font-size: 6.2pt; letter-spacing: .3em; text-transform: uppercase; color: #e0b98f; }
+.contact-page .info span { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 13pt; line-height: 1.25; display: block; margin-top: .8mm; word-break: break-word; }
+.contact-page .closing { margin-top: 12mm; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16pt; color: #e0b98f; }
+.contact-page .photo { position: absolute; top: 0; right: 0; bottom: 0; width: 38%; }
+.contact-page .foot { right: auto; width: 56%; }

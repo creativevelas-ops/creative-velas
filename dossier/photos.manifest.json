@@ -1,0 +1,47 @@
+{
+  "_note": "Fotos de la tienda Shopify (creativevelas.com). Se descargan con dossier/fetch-photos.sh. Requiere acceso de red a cdn.shopify.com.",
+  "photos": [
+    {"id": "sl-01", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0393.jpg?v=1789914460"},
+    {"id": "sl-02", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0389.jpg?v=1789914461"},
+    {"id": "sl-03", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0402.jpg?v=1789914460"},
+    {"id": "sl-04", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0418.jpg?v=1789914440"},
+    {"id": "sl-05", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/IMG-20260821_202257.jpg?v=1787337775"},
+    {"id": "sl-06", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_1f2361e9-7cb6-4874-9487-eebee4138135.jpg?v=1786558659"},
+    {"id": "sl-07", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0403.jpg?v=1789914460"},
+    {"id": "sl-08", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0374_fb87439b-7b74-4daa-87f7-4432b8f9bf91.jpg?v=1789914460"},
+    {"id": "sl-09", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0405.jpg?v=1789914460"},
+    {"id": "sl-10", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0409.jpg?v=1789914458"},
+    {"id": "sl-11", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0421.jpg?v=1789914440"},
+    {"id": "sl-12", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0433.jpg?v=1789914440"},
+    {"id": "sl-13", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_04cc886f-f181-4c33-b4f4-71af562b567c.jpg?v=1787337819"},
+    {"id": "sl-14", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0419.jpg?v=1789914440"},
+    {"id": "sl-15", "product": "sun-lantern", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/DSC_0426.jpg?v=1789914440"},
+
+    {"id": "st-01", "product": "sun-translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_17b9a384-3ba0-426b-8af6-694679860a05.jpg?v=1787337819"},
+    {"id": "st-02", "product": "sun-translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_fd880044-331e-4ffb-b8c1-adeca15b37a7.jpg?v=1786558659"},
+    {"id": "st-03", "product": "sun-translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_e8cf6356-37de-4ef2-a735-500885175ba7.jpg?v=1787337819"},
+
+    {"id": "tr-01", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_0875d0e5-64d0-4b77-be13-6310e2bf8974.jpg?v=1787404914"},
+    {"id": "tr-02", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_3b78c816-81f5-43a8-91db-3c57ffd7d663.jpg?v=1787337819"},
+    {"id": "tr-03", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/IMG_20251208_224317.jpg?v=1786645612"},
+    {"id": "tr-04", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_2b068a2c-b417-4a05-adfa-13fbc0ed3591.jpg?v=1786558658"},
+    {"id": "tr-05", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_6e6915f0-5897-4c79-a6ed-3245c98c3a72.jpg?v=1786558658"},
+    {"id": "tr-06", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_2edca1c0-93d6-44d1-8723-9f4dcf2dc6ae.jpg?v=1786558658"},
+    {"id": "tr-07", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_1ccd443b-eb82-4886-88bb-627096f4cafa.jpg?v=1786558658"},
+    {"id": "tr-08", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_50bcd6af-1abe-4d66-abe3-40c6e91684bc.jpg?v=1786558658"},
+    {"id": "tr-09", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_1ce73762-1595-4963-a0a2-39c2f5c2e3c0.jpg?v=1787337819"},
+    {"id": "tr-10", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_3aac02b9-c9cf-4bbb-a1f3-f6447cb7b049.jpg?v=1787404914"},
+    {"id": "tr-11", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_d8a09dbd-c79c-4df2-af19-16c8fa7f3bb5.jpg?v=1787404915"},
+    {"id": "tr-12", "product": "translucent", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_a667f0da-9077-4174-9d56-10b8dac9a076.jpg?v=1787404914"},
+
+    {"id": "so-01", "product": "soja", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_860abd31-d831-46e2-a32e-0a49b3e330b3.jpg?v=1787337818"},
+    {"id": "so-02", "product": "soja", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_98e3f2db-eb91-4514-8058-659af9082a3f.jpg?v=1787337819"},
+    {"id": "so-03", "product": "soja", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_f9e370f8-56e8-4a2c-95fc-c08068d2c919.jpg?v=1786558658"},
+    {"id": "so-04", "product": "soja", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_0c97ddc4-b31e-4904-98ab-8a9d0edfa88b.jpg?v=1787404861"},
+    {"id": "so-05", "product": "multipack-soja", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/rn-image_picker_lib_temp_10e62031-de7c-4157-9e23-735de6a3a5dd.jpg?v=1786558658"},
+
+    {"id": "pk-01", "product": "duo-translucido", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/pack_velas.jpg?v=1789928421"},
+    {"id": "pk-02", "product": "pack-descubre", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/pack_velas_2.jpg?v=1789928362"},
+    {"id": "pk-03", "product": "pack-coleccion", "url": "https://cdn.shopify.com/s/files/1/0959/8435/3546/files/pack_velas_3.jpg?v=1789928268"}
+  ]
+}
