@@ -66,14 +66,15 @@ print("planos:", len(shots), "trailer:", sum(s["kind"] == "vid" for s in shots),
 
 def render(i):
     s = shots[i]; out = f"{WK}/shots/{i:03d}.mp4"
+    if os.path.exists(out): return out
     L = s["dur"] + F; n = int(round(L * FPS))
     BG = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=40:6,eq=brightness=-0.22:saturation=1.25"
     if s["kind"] == "vid":
         pre = ["-ss", f"{s['ss']:.2f}", "-t", f"{L:.2f}", "-i", s["src"]]
         fc = (f"[0:v]crop=3840:1920:0:120,fps={FPS},split[a][b];[a]{BG}[bg];"
-              f"[b]crop=3413:1920,scale=1080:608,setsar=1,eq=contrast=1.06:saturation=1.2[fg];[bg][fg]overlay=0:656,vignette=angle=PI/5[v]")
+              f"[b]crop=3413:1920,scale=1080:608,setsar=1,eq=contrast=1.06:saturation=1.2[fg];[bg][fg]overlay=0:656,fps=30,vignette=angle=PI/5,setsar=1,format=yuv420p[v]")
     else:
-        pre = ["-i", s["src"]]
+        pre = ["-framerate", str(FPS), "-i", s["src"]]
         mode = i % 4
         if mode == 0: z, x, y = f"1+0.12*on/{n}", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
         elif mode == 1: z, x, y = f"1.12-0.12*on/{n}", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
@@ -81,7 +82,7 @@ def render(i):
         else: z, x, y = "1.12", f"(iw-iw/zoom)*(1-on/{n})", "ih/2-(ih/zoom/2)"
         fc = (f"[0:v]split[a][b];[a]{BG}[bg];"
               f"[b]scale=2160:1215:force_original_aspect_ratio=increase,crop=2160:1215,setsar=1,"
-              f"zoompan=z='{z}':x='{x}':y='{y}':d={n}:s=1080x608:fps={FPS},eq=contrast=1.06:saturation=1.2[fg];[bg][fg]overlay=0:656,vignette=angle=PI/5[v]")
+              f"zoompan=z='{z}':x='{x}':y='{y}':d={n}:s=1080x608:fps={FPS},eq=contrast=1.06:saturation=1.2[fg];[bg][fg]overlay=0:656,fps=30,vignette=angle=PI/5,setsar=1,format=yuv420p[v]")
     cmd = ["ffmpeg", "-y", "-loglevel", "error", *pre, "-filter_complex", fc, "-map", "[v]", "-frames:v", str(n), "-an",
            "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-pix_fmt", "yuv420p", out]
     subprocess.run(cmd, check=True); return out
@@ -93,9 +94,10 @@ with ThreadPoolExecutor(3) as ex:
 files = [f"{WK}/shots/{i:03d}.mp4" for i in range(len(shots))]; durs = [s["dur"] for s in shots]
 cmd = ["ffmpeg", "-y", "-loglevel", "error"]
 for f in files: cmd += ["-i", f]
-fc = ""; last = "[0:v]"; acc = 0.0
+fc = "".join(f"[{k}:v]fps=30,setsar=1,format=yuv420p,settb=AVTB[n{k}];" for k in range(len(files)))
+last = "[n0]"; acc = 0.0
 for k in range(1, len(files)):
-    acc += durs[k - 1]; fc += f"{last}[{k}:v]xfade=transition=fade:duration={F}:offset={acc:.3f}[x{k}];"; last = f"[x{k}]"
+    acc += durs[k - 1]; fc += f"{last}[n{k}]xfade=transition=fade:duration={F}:offset={acc:.3f}[x{k}];"; last = f"[x{k}]"
 fc += f"{last}null[v]"
 cmd += ["-filter_complex", fc, "-map", "[v]", "-t", f"{sum(durs):.3f}", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-pix_fmt", "yuv420p", "-r", str(FPS), f"{WK}/video_sin_audio.mp4"]
 subprocess.run(cmd, check=True); print("ensamblado ok", flush=True)
@@ -170,8 +172,8 @@ for s in shots:
                 arrow(a, b, 50, 1118)
             break
 last = tiempos[-1]; a = last["inicio"] + LEAD
-ev(a + 0.3, TOTAL - 0.1, "Sticker", r"{\an8\pos(540,420)\fad(200,300)\1c&HFFFFFF&\3c&H0000FF&\bord18\t(0,300,\fscx115\fscy115)\t(300,500,\fscx100\fscy100)}SÍGUEME", 6)
-arrow(a + 0.3, TOTAL - 0.1, 160, 400, "&H0000FFFF&", 70)
+ev(a + 0.3, TOTAL - 0.1, "Sticker", r"{\an8\pos(540,420)\fad(200,300)\1c&HFFFFFF&\3c&H0000FF&\bord18\fscx130\fscy130\t(0,300,\fscx150\fscy150)\t(300,500,\fscx130\fscy130)}SÍGUEME", 6)
+arrow(a + 0.3, TOTAL - 0.1, 270, 395, "&H0000FFFF&", 75)
 open(f"{WK}/subs.ass", "w", encoding="utf8").write("\n".join(ass))
 
 # música y efectos
